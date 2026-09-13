@@ -131,3 +131,9 @@ dmypy.json
 #temp dataset folders
 tmp_*/
 mtcnn/
+
+# generated data
+train_sample_videos/*/
+prepared_dataset/
+split_dataset/
+.\tmp_debug/

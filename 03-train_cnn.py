@@ -16,9 +16,9 @@ print('TensorFlow version: ', tf.__version__)
 #else:
 #    print("No GPU found")
 
-dataset_path = '.\\split_dataset\\'
+dataset_path = './split_dataset/'
 
-tmp_debug_path = '.\\tmp_debug'
+tmp_debug_path = './tmp_debug'
 print('Creating Directory: ' + tmp_debug_path)
 os.makedirs(tmp_debug_path, exist_ok=True)
 
@@ -29,7 +29,7 @@ def get_filename_only(file_path):
 
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras import applications
-from efficientnet.tfkeras import EfficientNetB0 #EfficientNetB1, EfficientNetB2, EfficientNetB3, EfficientNetB4, EfficientNetB5, EfficientNetB6, EfficientNetB7
+from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import Adam
@@ -110,7 +110,7 @@ model.summary()
 # Compile model
 model.compile(optimizer = Adam(lr=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
 
-checkpoint_filepath = '.\\tmp_checkpoint'
+checkpoint_filepath = './tmp_checkpoint'
 print('Creating Directory: ' + checkpoint_filepath)
 os.makedirs(checkpoint_filepath, exist_ok=True)
 
