@@ -108,7 +108,7 @@ model.add(Dense(units = 1, activation = 'sigmoid'))
 model.summary()
 
 # Compile model
-model.compile(optimizer = Adam(lr=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
+model.compile(optimizer = Adam(learning_rate=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
 
 checkpoint_filepath = './tmp_checkpoint'
 print('Creating Directory: ' + checkpoint_filepath)
@@ -132,7 +132,7 @@ custom_callbacks = [
 
 # Train network
 num_epochs = 20
-history = model.fit_generator(
+history = model.fit(
     train_generator,
     epochs = num_epochs,
     steps_per_epoch = len(train_generator),
